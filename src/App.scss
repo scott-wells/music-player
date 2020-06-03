@@ -1,0 +1,14 @@
+$greydark: #040404;
+$greylight: #131313;
+$greylighter: #282828;
+
+.App {
+  height: calc(100vh - 90px);
+  background: red;
+}
+
+.outer-wrap {
+  background: grey;
+  height: 100vh;
+  min-height: 100%;
+}
