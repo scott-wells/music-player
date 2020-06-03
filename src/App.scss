@@ -1,14 +1,128 @@
 $greydark: #040404;
 $greylight: #131313;
 $greylighter: #282828;
+$greyText: #b3b3b3;
+$greyNav: #090909;
+@mixin boxShadow {
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
 
 .App {
   height: calc(100vh - 90px);
-  background: red;
+  background: $greylight;
+  display: flex;
+}
+
+.navbar {
+  color: white;
+  width: 228px;
+  height: calc(100% - 10px);
+  background: $greydark;
+  padding: 10px 10px 0;
+  display: flex;
+  flex-direction: column;
+  .logo {
+    padding: 1.5rem 0.8rem;
+    svg {
+      max-width: 130px;
+      path {
+        fill: white;
+      }
+    }
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      color: $greyText;
+      list-style-type: none;
+      border-radius: 5px;
+      padding: 0.8rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      &.active {
+        background: $greylighter;
+      }
+      &:hover {
+        color: white;
+      }
+    }
+  }
+  .cookies {
+    font-size: 0.6rem;
+    color: $greyText;
+    text-align: center;
+    margin-top: auto;
+    padding: 1rem;
+    span {
+      display: block;
+    }
+  }
 }
 
 .outer-wrap {
   background: grey;
   height: 100vh;
   min-height: 100%;
+}
+
+.music-controls {
+  z-index: 2;
+  position: relative;
+  color: white;
+  background: $greylighter;
+  text-align: center;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upper-nav {
+  background: $greyNav;
+  height: 56px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: white;
+  padding: 0.5rem 2rem;
+}
+
+.main {
+  width: 100%;
+  .main-content {
+    color: white;
+    padding: 0.5rem 2rem;
+    h1 {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+.cards-wrap {
+  .card {
+    background: $greylighter;
+    border-radius: 10px;
+    width: 180px;
+    overflow: hidden;
+    padding: 1.2rem;
+    @include boxShadow();
+    .card-image {
+      height: 160px;
+      @include boxShadow();
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .card-content {
+      padding: 0.4rem 0;
+      h3 {
+        font-weight: 600;
+        font-size: 0.8rem;
+      }
+    }
+  }
 }
