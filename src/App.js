@@ -4,7 +4,7 @@ import "./App.scss";
 import Nav from "./components/Nav";
 import Main from "./components/Main";
 
-function App() {
+const App = () => {
   return (
     <div className='outer-wrap'>
       <div className='App'>
@@ -14,6 +14,6 @@ function App() {
       <div className='music-controls'>music controls</div>
     </div>
   );
-}
+};
 
 export default App;
