@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { ReactComponent as HomeIcon } from "../svg/home.svg";
 import { ReactComponent as SearchIcon } from "../svg/search.svg";
@@ -17,15 +18,21 @@ const Nav = () => {
         </svg>
       </div>
       <ul>
-        <li className='active'>
-          <HomeIcon /> Home
-        </li>
-        <li>
-          <SearchIcon /> Search
-        </li>
-        <li>
-          <LibraryIcon /> Your Library
-        </li>
+        <Link to='/'>
+          <li className='active'>
+            <HomeIcon /> Home
+          </li>
+        </Link>
+        <Link to='/search'>
+          <li>
+            <SearchIcon /> Search
+          </li>
+        </Link>
+        <Link to='/your-library'>
+          <li>
+            <LibraryIcon /> Your Library
+          </li>
+        </Link>
       </ul>
       <div className='cookies'>
         <span>Cookies</span>

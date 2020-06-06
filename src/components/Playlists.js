@@ -1,5 +1,6 @@
 import React from "react";
 import { ReactComponent as PlayIcon } from "../svg/play.svg";
+import { Link } from "react-router-dom";
 
 const Playlists = (props) => {
   const dataPlaylists = [
@@ -74,19 +75,21 @@ const Playlists = (props) => {
 
   return (
     <div className='cards-wrap-inner'>
-      {matchedPlaylists.map((playlist) => (
-        <div className='card'>
-          <div className='card-image'>
-            <img src={playlist.img} alt='Pic 1' />
+      {matchedPlaylists.map((playlist, id) => (
+        <Link to={`/playlist/` + playlist.id} key={id}>
+          <div className='card'>
+            <div className='card-image'>
+              <img src={playlist.img} alt='Pic 1' />
+            </div>
+            <div className='card-content'>
+              <h3>{playlist.name}</h3>
+              <span>{playlist.desc}</span>
+            </div>
+            <span className='play-icon'>
+              <PlayIcon />
+            </span>
           </div>
-          <div className='card-content'>
-            <h3>{playlist.name}</h3>
-            <span>{playlist.desc}</span>
-          </div>
-          <span className='play-icon'>
-            <PlayIcon />
-          </span>
-        </div>
+        </Link>
       ))}
     </div>
   );
