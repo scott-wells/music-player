@@ -238,49 +238,120 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
-  }
-  .playlist-page-info {
-    text-align: center;
-    padding: 5rem 0;
-    display: flex;
-    .playlist-page-image {
-      max-width: 230px;
-      max-height: 200px;
-      padding-right: 2rem;
-      img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        @include boxShadow();
+    .playlist-page-header {
+      text-align: center;
+      padding: 5rem 0;
+      display: flex;
+      .playlist-page-image {
+        max-width: 230px;
+        max-height: 200px;
+        padding-right: 2rem;
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          @include boxShadow();
+        }
+      }
+      .playlist-page-title {
+        text-align: left;
+        padding-left: 1.2rem 2rem;
+        h1 {
+          margin: 0;
+          font-size: 5rem;
+          font-weight: 700;
+          line-height: 1;
+          letter-spacing: -4px;
+        }
+        .tagline {
+          font-size: 0.9rem;
+          opacity: 0.7;
+        }
+        .playlist-page-desc {
+          display: flex;
+          align-items: center;
+          font-size: 0.8rem;
+          .spotify {
+            margin-right: 1.2rem;
+          }
+        }
       }
     }
-    .playlist-page-content {
-      text-align: left;
-      padding-left: 1.2rem 2rem;
-      h1 {
-        margin: 0;
-        font-size: 5rem;
-        font-weight: 700;
-        line-height: 1;
-        letter-spacing: -6px;
-      }
-      .tagline {
-        font-size: 0.9rem;
-        opacity: 0.7;
-      }
-      .playlist-page-desc {
+    .playlist-page-songs {
+      height: 100%;
+      .playlist-buttons {
         display: flex;
         align-items: center;
-        font-size: 0.8rem;
-        .spotify {
-          margin-right: 1.2rem;
+        .icon {
+          margin-left: 2rem;
+        }
+        .play-icon {
+          @extend .play-icon;
+          opacity: 1;
+          position: relative;
+          margin-left: 0;
+          height: 50px;
+          width: 50px;
+          right: 0;
+          bottom: 0;
+          svg {
+            height: 25px;
+            width: 25px;
+          }
+        }
+        .heart-icon {
+          width: 25px;
+          height: 25px;
+          svg {
+            fill: white;
+          }
+        }
+        .dots-icon {
+          font-size: 1.5rem;
+          letter-spacing: 4px;
         }
       }
     }
   }
-  .playlist-page-songs {
-    height: 100%;
-    button {
+}
+
+ul.song-list {
+  padding: 0;
+  li {
+    list-style-type: none;
+    width: 100%;
+    padding: 0.8rem;
+    display: flex;
+    align-items: center;
+    transition: background 0.2s ease-in-out;
+    &:hover {
+      background: rgba($color: #fff, $alpha: 0.1);
+    }
+    .song-details {
+      h3 {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 400;
+      }
+      span {
+        opacity: 0.7;
+        font-size: 0.7rem;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .song-time {
+      margin-left: auto;
+    }
+    .song-icon {
+      padding-right: 1rem;
+      svg {
+        width: 15px;
+        height: 15px;
+        fill: white;
+        opacity: 0.7;
+      }
     }
   }
 }
