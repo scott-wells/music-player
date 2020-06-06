@@ -1,9 +1,19 @@
 $greydark: #040404;
+
 $greylight: #131313;
 $greylighter: #282828;
 $greyText: #b3b3b3;
+
 $greyNav: #090909;
 $greenButton: #1db954;
+$lightText: #b8b2aa;
+$lighterText: #fff7ec;
+$bluedarkest: #0a131a;
+$bluedark: #0d1922;
+$bluelight: #10181f;
+$bluelighter: #131d25;
+$bluelightest: #25303a;
+$pinkButton: #b91361;
 @mixin boxShadow {
   box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
 }
@@ -36,20 +46,30 @@ body {
 
 .subtext {
   font-size: 0.9rem;
-  color: $greyText;
+  // color: $greyText;
+  color: $lightText;
+}
+
+.outer-wrap {
+  background: grey;
+  height: 100vh;
+  min-height: 100%;
 }
 
 .App {
   height: calc(100vh - 90px);
-  background: $greylight;
+  // background: $greylight;
+  background: $bluelighter;
   display: flex;
 }
 
 .navbar {
-  color: white;
+  // color: white;
+  color: $lightText;
   width: 260px;
   height: 100%;
-  background: $greydark;
+  // background: $greydark;
+  background: $bluedarkest;
   padding: 10px 10px 0;
   display: flex;
   flex-direction: column;
@@ -58,7 +78,8 @@ body {
     svg {
       max-width: 120px;
       path {
-        fill: white;
+        // fill: white;
+        fill: $lighterText;
       }
     }
   }
@@ -70,7 +91,8 @@ body {
       text-decoration: none;
 
       li {
-        color: $greyText;
+        // color: $greyText;
+        color: $lightText;
         list-style-type: none;
         border-radius: 5px;
         padding: 0.4rem 0.8rem;
@@ -84,21 +106,26 @@ body {
           margin-right: 15px;
         }
         &.active {
-          background: $greylighter;
-          color: white;
+          // background: $greylighter;
+          background: $pinkButton;
+          // color: white;
+          color: $lighterText;
           svg {
-            fill: white;
+            // fill: white;
+            fill: $lighterText;
           }
         }
         &:hover {
-          color: white;
+          // color: white;
+          color: $lighterText;
         }
       }
     }
   }
   .cookies {
     font-size: 0.6rem;
-    color: $greyText;
+    // color: $greyText;
+    color: $lightText;
     text-align: center;
     margin-top: auto;
     padding: 1rem;
@@ -108,17 +135,13 @@ body {
   }
 }
 
-.outer-wrap {
-  background: grey;
-  height: 100vh;
-  min-height: 100%;
-}
-
 .music-controls {
   z-index: 2;
   position: relative;
-  color: white;
-  background: $greylighter;
+  // color: white;
+  // background: $greylighter;
+  color: $lighterText;
+  background: $bluedark;
   text-align: center;
   height: 90px;
   display: flex;
@@ -128,12 +151,13 @@ body {
 }
 
 .upper-nav {
-  background: rgba($color: $greyNav, $alpha: 0.75);
+  background: rgba($color: $bluelight, $alpha: 0.75);
   height: 56px;
   width: 100%;
   display: flex;
   align-items: center;
-  color: white;
+  // color: white;
+  color: $lighterText;
   padding: 0.5rem 2rem;
   position: fixed;
   top: 0;
@@ -146,7 +170,8 @@ body {
   position: relative;
   padding-top: 2rem;
   .main-content {
-    color: white;
+    // color: white;
+    color: $lighterText;
     .main-inner {
       padding: 1.2rem 2rem;
     }
@@ -172,9 +197,10 @@ body {
   }
   a {
     text-decoration: none;
-    color: inherit;
+    color: $lighterText;
     .card {
-      background: $greylighter;
+      // background: $greylighter;
+      background: $bluelightest;
       border-radius: 10px;
       margin-right: 1.2rem;
       width: 190px;
@@ -207,7 +233,8 @@ body {
         }
         span {
           font-size: 0.6rem;
-          color: $greyText;
+          // color: $greyText;
+          color: $lightText;
           line-height: 0.9rem;
           display: block;
         }
@@ -222,7 +249,8 @@ body {
   border-radius: 50%;
   overflow: hidden;
   display: flex;
-  background: $greenButton;
+  // background: $greenButton;
+  background: $pinkButton;
   margin-left: auto;
   opacity: 0;
   position: absolute;
@@ -303,7 +331,8 @@ body {
           width: 25px;
           height: 25px;
           svg {
-            fill: white;
+            // fill: white;
+            fill: $lighterText;
           }
         }
         .dots-icon {
@@ -349,7 +378,8 @@ ul.song-list {
       svg {
         width: 15px;
         height: 15px;
-        fill: white;
+        // fill: white;
+        fill: $lighterText;
         opacity: 0.7;
       }
     }
